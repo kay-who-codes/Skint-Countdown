@@ -8,6 +8,16 @@ footer {
     margin-top: 0; /* Ensure no extra margin at the top */
 }
 
+/* Style the hyperlink text "Kay 🧡" to be orange */
+footer a {
+    color: #f5a623; /* Orange colour for the link */
+    text-decoration: none; /* Optional: removes underline */
+}
+
+footer a:hover {
+    text-decoration: underline; /* Optional: adds underline on hover */
+}
+
 /* Ensures footer stays at the bottom on desktop */
 html, body {
     height: 100%;  /* Full height for the layout */
