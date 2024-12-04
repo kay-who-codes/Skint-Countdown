@@ -3,8 +3,8 @@ footer {
     background-color: #131313f7;
     padding: 10px;
     text-align: center;
-    position: fixed;
-    bottom: 0;
+    position: relative;
+    margin-top: 20px;  
     width: 100%;
 }
 
@@ -15,4 +15,11 @@ footer a {
 
 footer a:hover {
     text-decoration: underline;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 600px) {
+    .content {
+        padding-bottom: 70px; /* Add enough space at the bottom of the content for the footer */
+    }
 }
