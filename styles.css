@@ -46,7 +46,15 @@ header h1 {
 .results p {
     margin: 10px 0;
 }
-.results span {
+#half-remaining {
     font-weight: bold;
-    color: #03dac6;
+    color: #fdfd96; /* Light yellow */
+}
+#twenty-percent-remaining {
+    font-weight: bold;
+    color: #ffcc99; /* Light orange */
+}
+#zero-balance {
+    font-weight: bold;
+    color: #ff6961; /* Light red */
 }
