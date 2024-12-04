@@ -4,17 +4,8 @@ footer {
     padding: 10px;
     text-align: center;
     position: relative;
-    margin-top: 20px;  
     width: 100%;
-}
-
-footer a {
-    color: #f5a623;
-    text-decoration: none;
-}
-
-footer a:hover {
-    text-decoration: underline;
+    margin-top: 0; /* Remove margin-top to avoid pushing the footer down */
 }
 
 /* Mobile responsiveness */
@@ -22,4 +13,17 @@ footer a:hover {
     .content {
         padding-bottom: 70px; /* Add enough space at the bottom of the content for the footer */
     }
+}
+
+/* Ensures footer stays at the bottom on desktop */
+html, body {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Main content area will grow and take up space, pushing the footer down */
+.main-content {
+    flex: 1;
 }
