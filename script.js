@@ -49,12 +49,19 @@ document.addEventListener("DOMContentLoaded", () => {
             const fullWeeks = Math.floor(totalDays / 7);
             const remainingDays = totalDays % 7;
             return `${fullWeeks} Week${fullWeeks !== 1 ? "s" : ""}, ${remainingDays} Day${remainingDays !== 1 ? "s" : ""} - ${formatDate(endDate)}`;
-        } else {
-            // More than 5 weeks
+        } else if (totalDays < 365) {
+            // Less than a year (more than 5 weeks)
             const fullMonths = Math.floor(totalDays / 30.44); // Average days in a month
             const remainingWeeks = Math.floor((totalDays % 30.44) / 7);
             const remainingDays = Math.round((totalDays % 30.44) % 7);
             return `${fullMonths} Month${fullMonths !== 1 ? "s" : ""}, ${remainingWeeks} Week${remainingWeeks !== 1 ? "s" : ""}, ${remainingDays} Day${remainingDays !== 1 ? "s" : ""} - ${formatDate(endDate)}`;
+        } else {
+            // More than a year
+            const fullYears = Math.floor(totalDays / 365);
+            const remainingMonths = Math.floor((totalDays % 365) / 30.44);
+            const remainingWeeks = Math.floor(((totalDays % 365) % 30.44) / 7);
+            const remainingDays = Math.round(((totalDays % 365) % 30.44) % 7);
+            return `${fullYears} Year${fullYears !== 1 ? "s" : ""}, ${remainingMonths} Month${remainingMonths !== 1 ? "s" : ""}, ${remainingWeeks} Week${remainingWeeks !== 1 ? "s" : ""}, ${remainingDays} Day${remainingDays !== 1 ? "s" : ""} - ${formatDate(endDate)}`;
         }
     }
 
