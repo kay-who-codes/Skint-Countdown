@@ -10,27 +10,34 @@ body {
     height: 100%;  /* Full height to allow footer positioning */
 }
 
-/* App container with padding around content */
+/* App container with max-width to center on larger screens */
 .app {
-    max-width: 600px;
-    margin: 0 auto;
-    padding: 20px;  /* Default padding for larger screens */
-    flex: 1; /* This ensures it can take up space if needed */
-    box-sizing: border-box; /* Ensures padding doesn't affect the width */
+    max-width: 600px;  /* Ensures the app doesn't stretch too wide on large screens */
+    margin: 0 auto;  /* Centers the app content horizontally */
+    padding: 20px;  /* Padding around content on desktop */
+    box-sizing: border-box;  /* Ensures padding is included in the width */
+    flex: 1;  /* This ensures the app content can grow or shrink as necessary */
 }
 
-/* Adding padding for mobile screens */
+/* Mobile version specific styling */
 @media (max-width: 600px) {
     .app {
-        padding: 8px; /* Ensure there's always 8px space around the content */
+        padding: 8px;  /* Ensures there's always 8px gap around app content on mobile */
+        width: 100%;  /* Makes sure the app content takes the full width of the screen */
+    }
+
+    /* Prevent content from being covered by footer */
+    .content {
+        padding-bottom: 70px;  /* Adds space at the bottom for footer */
     }
 }
 
-/* Header styles */
+/* Header styles (unchanged) */
 header {
     text-align: center;
     margin-bottom: 30px;
 }
+
 header h1 {
     font-size: 2em;
     font-weight: bold;
@@ -40,11 +47,13 @@ header h1 {
 .input-group {
     margin-bottom: 20px;
 }
+
 .input-group label {
     display: block;
     font-weight: bold;
     margin-bottom: 5px;
 }
+
 .input-group input {
     width: 100%;
     padding: 10px;
@@ -54,6 +63,7 @@ header h1 {
     background-color: #1e1e1e;
     color: #ffffff;
 }
+
 .input-group input:focus {
     outline: none;
     box-shadow: 0 0 5px rgba(0, 255, 255, 0.5);
@@ -64,28 +74,38 @@ header h1 {
     margin-top: 30px;
     font-size: 1.2em;
 }
+
 .results p {
     margin: 10px 0;
 }
+
 #half-remaining {
     font-weight: bold;
     color: #fdfd96; /* Light yellow */
 }
+
 #twenty-percent-remaining {
     font-weight: bold;
     color: #ffcc99; /* Light orange */
 }
+
 #zero-balance {
     font-weight: bold;
     color: #ff6961; /* Light red */
 }
 
+/* Footer styles (unchanged) */
+footer {
+    background-color: #131313f7;
+    padding: 10px;
+    text-align: center;
+    position: relative;
+    width: 100%;
+}
+
 /* Mobile responsiveness */
 @media (max-width: 600px) {
     .content {
-        padding-bottom: 70px; /* Extra space to ensure footer doesn't cover content */
-    }
-    .app {
-        padding: 8px; /* Ensure there's 8px space around app content */
+        padding-bottom: 70px;  /* Add space at the bottom of the content to prevent footer overlap */
     }
 }
