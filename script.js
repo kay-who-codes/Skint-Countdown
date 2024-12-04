@@ -30,15 +30,37 @@ document.addEventListener("DOMContentLoaded", () => {
         const timeToTwentyPercent = startingAmount * 0.2 / totalWeeklyExpenses;
         const timeToZero = startingAmount / totalWeeklyExpenses;
 
-        halfRemainingOutput.textContent = formatDuration(timeToHalf);
-        twentyPercentOutput.textContent = formatDuration(timeToTwentyPercent);
-        zeroBalanceOutput.textContent = formatDuration(timeToZero);
+        const today = new Date();
+
+        halfRemainingOutput.textContent = formatDuration(timeToHalf, today);
+        twentyPercentOutput.textContent = formatDuration(timeToTwentyPercent, today);
+        zeroBalanceOutput.textContent = formatDuration(timeToZero, today);
     }
 
-    function formatDuration(weeks) {
-        const fullWeeks = Math.floor(weeks);
-        const days = Math.round((weeks - fullWeeks) * 7);
-        return `${fullWeeks} week${fullWeeks !== 1 ? "s" : ""}, ${days} day${days !== 1 ? "s" : ""}`;
+    function formatDuration(weeks, startDate) {
+        const totalDays = Math.round(weeks * 7);
+        const endDate = new Date(startDate.getTime() + totalDays * 24 * 60 * 60 * 1000);
+
+        if (totalDays < 7) {
+            // Less than a week
+            return `${totalDays} Day${totalDays !== 1 ? "s" : ""} - ${formatDate(endDate)}`;
+        } else if (totalDays < 35) {
+            // Between 1 week and 5 weeks
+            const fullWeeks = Math.floor(totalDays / 7);
+            const remainingDays = totalDays % 7;
+            return `${fullWeeks} Week${fullWeeks !== 1 ? "s" : ""}, ${remainingDays} Day${remainingDays !== 1 ? "s" : ""} - ${formatDate(endDate)}`;
+        } else {
+            // More than 5 weeks
+            const fullMonths = Math.floor(totalDays / 30.44); // Average days in a month
+            const remainingWeeks = Math.floor((totalDays % 30.44) / 7);
+            const remainingDays = Math.round((totalDays % 30.44) % 7);
+            return `${fullMonths} Month${fullMonths !== 1 ? "s" : ""}, ${remainingWeeks} Week${remainingWeeks !== 1 ? "s" : ""}, ${remainingDays} Day${remainingDays !== 1 ? "s" : ""} - ${formatDate(endDate)}`;
+        }
+    }
+
+    function formatDate(date) {
+        const options = { day: "numeric", month: "short", year: "numeric" };
+        return date.toLocaleDateString("en-GB", options);
     }
 
     // Event listeners for real-time calculations
