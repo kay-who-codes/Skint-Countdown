@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
 
         const timeToHalf = startingAmount / 2 / weeklyExpenses;
-        const timeToTwentyPercent = startingAmount * 0.2 / weeklyExpenses;
+        const timeToTwentyPercent = startingAmount * 0.8 / weeklyExpenses;
         const timeToZero = startingAmount / weeklyExpenses;
 
         halfRemainingOutput.textContent = formatDuration(timeToHalf);
