@@ -1,15 +1,18 @@
 /* Header styles */
 .header-bar {
-    background-color: #333;
+    background-color: #11111103; /* Set header background to the specified color */
     padding: 15px;
-    text-align: center;
+    display: flex;
+    justify-content: space-between; /* Aligns content to the left and right */
+    align-items: center;
 }
 
 .header-link {
     font-size: 24px;
-    color: #f5a623;
+    color: white; /* Change text color to white */
     text-decoration: none;
     font-weight: bold;
+    margin-left: 20px; /* Keeps it aligned to the left */
 }
 
 .dropdown {
@@ -24,7 +27,7 @@
     border: none;
     padding: 10px 20px;
     cursor: pointer;
-    margin-left: 20px;
+    margin-right: 20px; /* Align the button to the right */
 }
 
 .dropbtn:hover {
