@@ -5,25 +5,25 @@ footer {
     text-align: center;
     position: relative;
     width: 100%;
-    margin-top: 0; /* Remove margin-top to avoid pushing the footer down */
-}
-
-/* Mobile responsiveness */
-@media (max-width: 600px) {
-    .content {
-        padding-bottom: 70px; /* Add enough space at the bottom of the content for the footer */
-    }
+    margin-top: 0; /* Ensure no extra margin at the top */
 }
 
 /* Ensures footer stays at the bottom on desktop */
 html, body {
-    height: 100%;
+    height: 100%;  /* Full height for the layout */
     margin: 0;
     display: flex;
-    flex-direction: column;
+    flex-direction: column; /* Arrange child elements vertically */
 }
 
-/* Main content area will grow and take up space, pushing the footer down */
+/* Main content area will take up the available space, pushing footer down */
 .main-content {
-    flex: 1;
+    flex: 1; /* Flexbox will expand this area to push the footer down */
+}
+
+/* Mobile responsiveness: adds enough space at the bottom of the content for the footer */
+@media (max-width: 600px) {
+    .content {
+        padding-bottom: 70px; /* Adds space at the bottom of the content to avoid footer overlap */
+    }
 }
