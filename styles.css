@@ -10,12 +10,20 @@ body {
     height: 100%;  /* Full height to allow footer positioning */
 }
 
-/* App container */
+/* App container with padding around content */
 .app {
     max-width: 600px;
     margin: 0 auto;
-    padding: 20px;
+    padding: 20px;  /* Default padding for larger screens */
     flex: 1; /* This ensures it can take up space if needed */
+    box-sizing: border-box; /* Ensures padding doesn't affect the width */
+}
+
+/* Adding padding for mobile screens */
+@media (max-width: 600px) {
+    .app {
+        padding: 8px; /* Ensure there's always 8px space around the content */
+    }
 }
 
 /* Header styles */
@@ -76,5 +84,8 @@ header h1 {
 @media (max-width: 600px) {
     .content {
         padding-bottom: 70px; /* Extra space to ensure footer doesn't cover content */
+    }
+    .app {
+        padding: 8px; /* Ensure there's 8px space around app content */
     }
 }
