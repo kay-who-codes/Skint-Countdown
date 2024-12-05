@@ -32,17 +32,6 @@ body {
     }
 }
 
-/* Header styles */
-header {
-    text-align: center;
-    margin-bottom: 30px;
-}
-
-header h1 {
-    font-size: 2em;
-    font-weight: bold;
-}
-
 /* Input group styles */
 .input-group {
     margin-bottom: 20px;
@@ -92,16 +81,6 @@ header h1 {
 #zero-balance {
     font-weight: bold;
     color: #ff6961; /* Light red */
-}
-
-/* Footer styles */
-footer {
-    background-color: #131313f7;
-    padding: 10px;
-    text-align: center;
-    position: relative;
-    width: 100%;
-    margin-top: 0; /* Ensure no extra margin at the top */
 }
 
 /* Mobile responsiveness */
