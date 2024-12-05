@@ -10,20 +10,20 @@ body {
     height: 100%;  /* Full height to allow footer positioning */
 }
 
-/* App container with max-width to center on larger screens */
-.app {
-    max-width: 600px;  /* Ensures the app doesn't stretch too wide on large screens */
-    margin: 0 auto;  /* Centers the app content horizontally */
+/* Main content container with max-width to center on larger screens */
+.main-content {
+    max-width: 600px;  /* Ensures the content doesn't stretch too wide on large screens */
+    margin: 0 auto;  /* Centers the content horizontally */
     padding: 20px;  /* Padding around content on desktop */
     box-sizing: border-box;  /* Ensures padding is included in the width */
-    flex: 1;  /* This ensures the app content can grow or shrink as necessary */
+    flex: 1;  /* This ensures the content can grow or shrink as necessary */
 }
 
 /* Mobile version specific styling */
 @media (max-width: 600px) {
-    .app {
-        padding: 8px;  /* Ensures there's always 8px gap around app content on mobile */
-        width: 100%;  /* Makes sure the app content takes the full width of the screen */
+    .main-content {
+        padding: 8px;  /* Ensures there's always 8px gap around content on mobile */
+        width: 100%;  /* Makes sure the content takes the full width of the screen */
     }
 
     /* Prevent content from being covered by footer */
