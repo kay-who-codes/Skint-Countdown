@@ -1,31 +1,48 @@
+/* General body styles */
 body {
     font-family: Arial, sans-serif;
     background-color: #121212;
     color: #ffffff;
     margin: 0;
     padding: 0;
+    display: flex;
+    flex-direction: column; /* Allows vertical stacking of header, content, and footer */
+    height: 100%;  /* Full height to allow footer positioning */
 }
-.app {
-    max-width: 600px;
-    margin: 0 auto;
-    padding: 20px;
+
+/* Main content container with max-width to center on larger screens */
+.main-content {
+    max-width: 600px;  /* Ensures the content doesn't stretch too wide on large screens */
+    margin: 0 auto;  /* Centers the content horizontally */
+    padding: 20px;  /* Padding around content on desktop */
+    box-sizing: border-box;  /* Ensures padding is included in the width */
+    flex: 1;  /* This ensures the content can grow or shrink as necessary */
 }
-header {
-    text-align: center;
-    margin-bottom: 30px;
+
+/* Mobile version specific styling */
+@media (max-width: 600px) {
+    .main-content {
+        padding: 8px;  /* Ensures there's always 8px gap around content on mobile */
+        width: 100%;  /* Makes sure the content takes the full width of the screen */
+    }
+
+    /* Prevent content from being covered by footer */
+    .content {
+        padding-bottom: 70px;  /* Adds space at the bottom for footer */
+    }
 }
-header h1 {
-    font-size: 2em;
-    font-weight: bold;
-}
+
+/* Input group styles */
 .input-group {
     margin-bottom: 20px;
 }
+
 .input-group label {
     display: block;
     font-weight: bold;
     margin-bottom: 5px;
 }
+
 .input-group input {
     width: 100%;
     padding: 10px;
@@ -35,26 +52,40 @@ header h1 {
     background-color: #1e1e1e;
     color: #ffffff;
 }
+
 .input-group input:focus {
     outline: none;
     box-shadow: 0 0 5px rgba(0, 255, 255, 0.5);
 }
+
+/* Results section */
 .results {
     margin-top: 30px;
     font-size: 1.2em;
 }
+
 .results p {
     margin: 10px 0;
 }
+
 #half-remaining {
     font-weight: bold;
     color: #fdfd96; /* Light yellow */
 }
+
 #twenty-percent-remaining {
     font-weight: bold;
     color: #ffcc99; /* Light orange */
 }
+
 #zero-balance {
     font-weight: bold;
     color: #ff6961; /* Light red */
+}
+
+/* Mobile responsiveness */
+@media (max-width: 600px) {
+    .content {
+        padding-bottom: 70px;  /* Adds space at the bottom of the content to prevent footer overlap */
+    }
 }

@@ -5,28 +5,52 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>⌛ Skint Countdown</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="header.css">
+    <link rel="stylesheet" href="footer.css">
 </head>
 <body>
-    <div class="app">
+    
+    <!-- Header Bar -->
+    <header class="header-bar">
+        <a href="https://kay-who-codes.github.io/Skint-Countdown/" class="header-link">Skint Countdown</a>
+        <div class="dropdown">
+            <button class="dropbtn" onclick="toggleDropdown()">More Apps</button>
+            <div class="dropdown-content">
+                <a href="https://kay-who-codes.github.io/Misanthrocards/">⬛ Misanthrocards</a>
+                <a href="https://kay-who-codes.github.io/Kings-Cup/">🍻 Kings Cup</a>
+                <a href="https://kay-who-codes.github.io/Would-You-Rather/">❓ Would You Rather</a>
+                <a href="https://kay-who-codes.github.io/invention-cards/">💡 Invention Cards</a>
+                <a href="https://kay-who-codes.github.io/Job-Cards/">👔 Job Cards</a>
+                <a href="https://kay-who-codes.github.io/Soundboard/">🔊 Soundboard</a>
+                <a href="https://kay-who-codes.github.io/Skint-Countdown/">⌛ Skint Countdown</a>
+                <a href="https://kay-who-codes.github.io/song-inspirator/">🎶 Song Inspirator</a>
+                <a href="https://kay-who-codes.github.io/random-numbers/">🔢 Random Number Generator</a>
+                <a href="https://github.com/kay-who-codes/coinflip">🪙 Coinflip</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- App -->
+    <div class="main-content">
         <header>
             <h1>⌛ Skint Countdown</h1>
         </header>
         <main>
             <div class="input-group">
                 <label for="starting-amount">Starting Amount (£):</label>
-                <input type="number" id="starting-amount" placeholder="Enter amount" step="0.01">
+                <input type="number" id="starting-amount" placeholder="Enter amount" step="10">
+            </div>
             <div class="input-group">
                 <label for="monthly-expenses">Monthly Expenses (£):</label>
-                <input type="number" id="monthly-expenses" placeholder="Enter monthly expenses" step="0.01">
-            </div>
+                <input type="number" id="monthly-expenses" placeholder="Enter monthly expenses" step="1">
             </div>
             <div class="input-group">
                 <label for="weekly-expenses">Weekly Expenses (£):</label>
-                <input type="number" id="weekly-expenses" placeholder="Enter weekly expenses" step="0.01">
+                <input type="number" id="weekly-expenses" placeholder="Enter weekly expenses" step="1">
             </div>
             <div class="input-group">
                 <label for="daily-expenses">Daily Expenses (£):</label>
-                <input type="number" id="daily-expenses" placeholder="Enter daily expenses" step="0.01">
+                <input type="number" id="daily-expenses" placeholder="Enter daily expenses" step="1">
             </div>
             <div class="results">
                 <p><strong>Half Remaining:</strong> <span id="half-remaining">-</span></p>
@@ -35,6 +59,15 @@
             </div>
         </main>
     </div>
+
+    <!-- Footer -->
+    <footer>
+        Made by <a href="https://linktr.ee/kaywhocreates" target="_blank" rel="noopener noreferrer">Kay 🧡</a>
+    </footer>
+
+    <script src="extremities.js"></script>
     <script src="script.js"></script>
+
 </body>
+
 </html>
