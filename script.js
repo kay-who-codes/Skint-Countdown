@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         // Calculate durations
         const timeToHalf = startingAmount / 2 / totalWeeklyExpenses;
-        const timeToTwentyPercent = startingAmount * 0.2 / totalWeeklyExpenses;
+        const timeToTwentyPercent = startingAmount * 0.8 / totalWeeklyExpenses;
         const timeToZero = startingAmount / totalWeeklyExpenses;
 
         const today = new Date();
