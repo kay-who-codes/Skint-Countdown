@@ -2,7 +2,7 @@
 
 A web app to help manage and track your finances with a countdown.
 
-![App Image](Non-App/App%20Image.png)
+[![App Image](Non-App/App%20Image.png)](https://kay-who-codes.github.io/Skint-Countdown/)
 
 ## Features
 
